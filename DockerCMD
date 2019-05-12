@@ -1,0 +1,129 @@
+    1  clear
+    2  apt-get update -y
+    3  sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+    4  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    5  sudo apt-key fingerprint 0EBFCD88
+    6  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    7  sudo apt-get update
+    8  sudo apt-get install docker-ce
+    9  clear
+   10  docker --version
+   11  pwd
+   12  ps -ef |frep docker
+   13  ps -ef |grep docker
+   14  grep man
+   15  man grep
+   16  cd /usr/bin/
+   17  ll
+   18  cd
+   19  clear
+   20  docker images
+   21  docker pull fedora
+   22  docker images
+   23  docker info
+   24  docker run -id --name f21 docker.io/fedora bash
+   25  docker images
+   26  docker info
+   27  docker ps
+   28  docker search fedora
+   29  docker ps
+   30  docker exec -it 5db1f277d7df /bin/bash
+   31  docker ps
+   32  ssh 172-31-31-11
+   33  ~ing ~
+   34  ping 172.31.31.11
+   35  docker run ubuntu:14.04 /bin/echo 'Hello World'
+   36  docker ps
+   37  docker ps -a
+   38  docker run -t -i ubuntu:14.04 /bin/bash
+   39  docker ps
+   40  docker ps -a
+   41  clear
+   42  docker run -d ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"
+   43  docker ps
+   44  docker ps -a
+   45  docker ps
+   46  docker info
+   47  cd /var/lib/docker
+   48  ll
+   49  cd containers/
+   50  ll
+   51  cd d5d1c082be20359dee45e98bae3e9c6c470413f4470e80395cc188f6209be34b/
+   52  ll
+   53  vi d5d1c082be20359dee45e98bae3e9c6c470413f4470e80395cc188f6209be34b-json.log 
+   54  cd
+   55  clear
+   56  ll
+   57  docker images
+   58  docker ps
+   59  docker exec -it d5d1c082be20 bin/bash
+   60  docker logs d5d1c082be20
+   61  docker ps
+   62  docker log 5db1f277d7df
+   63  docker logs 5db1f277d7df
+   64  docker ps
+   65  docker inspect d5d1c082be20
+   66  docker ps
+   67  docker inspect 5db1f277d7df
+   68  clear
+   69  history
+   70  clear
+   71  cd /opt/
+   72  mkdir dockerdemo
+   73  cd dockerdemo/
+   74  ll
+   75  mkdir flaskdemo
+   76  vi Dockerfile
+   77  docker rm $(docker ps -aq --filter "status=exited")
+   78  docker ps -e
+   79  docker ps -a
+   80  vi Dockerfile
+   81  cat Dockerfile 
+   82  vi app.py
+   83  ll
+   84  cat Dockerfile 
+   85  cat flaskdemo/
+   86  mv Dockerfile app.py /opt/dockerdemo/flaskdemo/
+   87  cd flaskdemo/
+   88  ll
+   89  cat Dockerfile 
+   90  cat app.py 
+   91  clear
+   92  pwd
+   93  ll
+   94  cat Dockerfile 
+   95  vi Dockerfile 
+   96  cat Dockerfile 
+   97  docker build . -t pythondemo:latest
+   98  docker images
+   99  docker run --name test-python -d b12afc7b542b
+  100  docker ps
+  101  docker ps -a
+  102  docker inspect 205bfb230fa1
+  103  docker logs 205bfb230fa1
+  104  ls -ltr
+  105  vi Dockerfile 
+  106  cat Dockerfile 
+  107  docker ps -a
+  108  docker rm 205bfb230fa1
+  109  docker ps -a
+  110  docker images
+  111  docker rmi pythondemo
+  112  docker images
+  113  docker build . -t pythondemo:latest
+  114  docker images
+  115  docker run --name test-python -d dea4046ce279
+  116  docker ps
+  117  docker exec -it 36f6e3310e39
+  118  docker exec -it 36f6e3310e39 bin/bash
+  119  docker log 36f6e3310e39
+  120  clear
+  121  docker ps
+  122  docker logs 36f6e3310e39
+  123  docker inspect 36f6e3310e39
+  124  docker ps
+  125  docker exec -it 36f6e3310e39
+  126  docker exec -it 36f6e3310e39 /bin/bash
+  127  ll
+  128  histort > DockerCMD
+  129  history >DockerCMD
